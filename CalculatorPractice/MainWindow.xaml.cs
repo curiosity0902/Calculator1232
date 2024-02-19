@@ -94,10 +94,10 @@ namespace CalculatorPractice
 
         private void InverseBtn_Click(object sender, RoutedEventArgs e)
         {
-            b = a;
-            a = "1";
-            operatorString = "/";
-            CalculateBtn_Click(sender, e);
+            a = (1 / double.Parse(a)).ToString ();
+            operatorString = "";
+            b = "";
+            ResultTb.Text = a + operatorString + b;
         }
 
         private void NegateBtn_Click(object sender, RoutedEventArgs e)
@@ -111,29 +111,26 @@ namespace CalculatorPractice
 
         private void SqrtBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (a == "")
-                return;
-            b = ((double)1/2).ToString();
-            operatorString = "^";
-            CalculateBtn_Click(sender, e);
+            a = Math.Sqrt(double.Parse(a)).ToString();
+            operatorString = "";
+            b = "";
+            ResultTb.Text = a + operatorString + b;
         }
 
         private void SqBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (a == "")
-                return;
-            b = "2";
-            operatorString = "^";
-            CalculateBtn_Click(sender, e);
+            a = Math.Pow(double.Parse(a), 2).ToString();
+            operatorString = "";
+            b = "";
+            ResultTb.Text = a + operatorString + b;
         }
 
         private void CubeBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (a == "")
-                return;
-            b = "3";
-            operatorString = "^";
-            CalculateBtn_Click(sender, e);
+            a = Math.Pow(double.Parse(a), 3).ToString();
+            operatorString = "";
+            b = "";
+            ResultTb.Text = a + operatorString + b;
         }
 
         private void PowBtn_Click(object sender, RoutedEventArgs e)
@@ -150,19 +147,6 @@ namespace CalculatorPractice
             else if (b != "" && !b.Contains(","))
                 b += ",";
             ResultTb.Text = a + operatorString + b;
-        }
-
-        private void FactorialBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (a == "")
-                return;
-            operatorString = "";
-            b = "";
-            double factorial = 1;
-            for (int i = 2; i <= double.Parse(a); i++)
-                factorial *= i;
-            a = factorial.ToString();
-            ResultTb.Text = a;
         }
 
         private void SinBtn_Click(object sender, RoutedEventArgs e)
@@ -201,7 +185,7 @@ namespace CalculatorPractice
         {
             operatorString = "";
             b = "";
-            a = Math.Log(double.Parse(a)).ToString();
+            a = Math.Log(double.Parse(a), 10).ToString();
             ResultTb.Text = a;
         }
 
@@ -211,6 +195,11 @@ namespace CalculatorPractice
             b = "";
             a = (Math.Cos(double.Parse(a))/Math.Sin(double.Parse(a))).ToString();
             ResultTb.Text = a;
+        }
+
+        private void zagllBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

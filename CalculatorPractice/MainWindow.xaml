@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CalculatorPractice"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="600" Width="800" FontFamily="Courier New"
+        Title="Calculate" Height="600" Width="800" FontFamily="Courier New"
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -129,15 +129,21 @@
                 Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="100" Background="#FFDAE1FF"/>
 
         <Button Content="/" Click="OperatorButton_Click"
-                Grid.Column="7" Grid.Row="2" Height="50" Width="60"
+                Grid.Column="6" Grid.Row="2" Height="50" Width="60"
                 BorderBrush="White" FontSize="40" Foreground="#FF351763" 
                 Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="100" Background="#FFDAE1FF" />
+
+        <Button Content="×" Name="zagllBtn"
+                Grid.Column="7" Grid.Row="2"  Height="50" Width="60"
+                BorderBrush="White" FontSize="46" Foreground="#FF351763"  Padding="0"
+                Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="100" Background="#FFFF7670" Cursor="Hand" Click="zagllBtn_Click"
+                />
 
         <Button Name="CalculateBtn" 
                 Grid.Column="7" Grid.Row="6"
                 Content="=" Click="CalculateBtn_Click" Height="50" Width="60"
                 BorderBrush="White" FontSize="40" Foreground="#FF351763" 
-                Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="100" Background="#FFDAE1FF" />
+                Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="100" Background="#FFDAE1FF" Cursor="Hand" />
 
         <Button Content="1/x" Name="InverseBtn"
                 Grid.Column="3" Grid.Row="3" Height="50" Width="60"
@@ -177,11 +183,11 @@
                 Click="PowBtn_Click"/>
 
 
-        <Button Content="ln" Name="LnBtn"
-                Grid.Column="2" Grid.Row="2"  Height="50" Width="60"
+        <Button Content="lg" Name="LnBtn"
+                Grid.Column = "2" Grid.Row="2"  Height="50" Width="60"
                 BorderBrush="White" FontSize="16" Foreground="#FF351763" 
                 Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="100" Background="#FFDAE1FF"
-                Click="LnBtn_Click"/>
+                Click="LnBtn_Click" Cursor="Hand"/>
 
         <Button Content="sin" Name="SinBtn"
                 Grid.Column="2" Grid.Row="3"  Height="50" Width="60"
